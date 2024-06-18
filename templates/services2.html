@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Early Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles_services.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="services">
+      <h1>Our Services</h1>
+      <div class="service-cards">
+        <div class="service-card">
+          <img
+            src="{{ url_for('static', filename='images/predictive_ana.jpg') }}"
+            alt="Predictive Analysis"
+          />
+          <h2>Predictive Analysis</h2>
+          <p>Utilize advanced algorithms to predict potential health risks.</p>
+        </div>
+        <div class="service-card">
+          <img
+            src="{{ url_for('static', filename='images/risk_eval.jpg') }}"
+            alt="Risk Assessment"
+          />
+          <h2>Risk Assessment</h2>
+          <p>Comprehensive assessment of your health risk factors.</p>
+        </div>
+        <div class="service-card">
+          <img
+            src="{{ url_for('static', filename='images/data_vsls.jpg') }}"
+            alt="Data Visualization"
+          />
+          <h2>Data Visualization</h2>
+          <p>Interactive charts and graphs to understand your health data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+        <a href="#">Contact</a>
+      </p>
+    </footer>
+  </body>
+</html>

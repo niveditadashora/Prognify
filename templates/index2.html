@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your trusted tool for predicting diseases early and accurately."
+    />
+    <title>Early Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/web.css') }}"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('services') }}">Services</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <input
+        type="text"
+        placeholder="Search..."
+        style="padding: 5px; border: none; border-radius: 3px"
+      />
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <img
+          src="{{ url_for('static', filename='images/logo_pred.png') }}"
+          alt="logo_prognify"
+          class="logo"
+        />
+        <button id="cta-button">Get Started</button>
+      </div>
+    </section>
+
+    <!-- Featured Tools -->
+    <section class="featured-tools">
+      <h2>Featured Tools</h2>
+      <div class="tools-cards">
+        <div class="card">Predictive Analysis</div>
+        <div class="card">Risk Assessment</div>
+        <div class="card">Data Visualization</div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2>Success Stories</h2>
+      <div class="testimonials-cards">
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/man.png') }}"
+            alt="User A"
+          />
+          <p>
+            "This tool helped me identify my health issues early on and take
+            necessary steps!" - User A
+          </p>
+        </div>
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='images/woman.png') }}"
+            alt="User B"
+          />
+          <p>
+            "Highly recommended for anyone looking to stay ahead of their
+            health." - User B
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+        <a href="#">Contact</a>
+      </p>
+    </footer>
+
+    <!-- Prediction Form Modal-->
+    <div id="prediction-modal" class="modal">
+      <div class="modal-content">
+        <button class="close">&times;</button>
+        <h1>Early Disease Prediction</h1>
+        <form id="prediction-form" method="POST" action="/">
+          <label for="symptoms">Enter your symptoms:</label>
+          <input
+            type="text"
+            id="symptoms"
+            name="symptoms"
+            placeholder="e.g., fever, cough, fatigue"
+            required
+          />
+          <button type="submit">Predict Disease</button>
+        </form>
+        <div id="result" class="result">
+          <h2>Result:</h2>
+          <p>
+            <strong>There might be something wrong with the </strong
+            ><span id="predicted-class"></span>
+          </p>
+          <p>
+            <strong>You might be having </strong
+            ><span id="predicted-disease"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Modal script
+      var modal = document.getElementById("prediction-modal");
+      var btn = document.getElementById("cta-button");
+      var btn_clos = document.getElementsByClassName("close")[0];
+
+      btn.onclick = function () {
+        document.getElementById("result").style.display = "none";
+        document.getElementById("symptoms").value = "";
+        modal.style.display = "block";
+      };
+
+      btn_clos.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // AJAX form submission
+      document
+        .getElementById("prediction-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var symptoms = document.getElementById("symptoms").value;
+
+          // Perform an AJAX request
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/predict", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              var response = JSON.parse(xhr.responseText);
+              document.getElementById("predicted-class").textContent =
+                response.predicted_class;
+              document.getElementById("predicted-disease").textContent =
+                response.predicted_disease;
+              document.getElementById("result").style.display = "block";
+            }
+          };
+
+          xhr.send(JSON.stringify({ symptoms: symptoms }));
+        });
+    </script>
+  </body>
+</html>

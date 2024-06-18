@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Early Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles_about2.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about">
+      <h1>About Us</h1>
+      <p>
+        Our mission is to provide early detection of potential health risks
+        through advanced predictive analysis.
+      </p>
+      <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is Early Disease Prediction?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Early disease prediction involves using advanced algorithms and
+              data analysis to identify potential health risks before they
+              become serious problems.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How does your service work?</button>
+          <div class="faq-answer">
+            <p>
+              Our service collects and analyzes health data to predict potential
+              diseases, providing users with actionable insights and
+              recommendations.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is my personal data safe?</button>
+          <div class="faq-answer">
+            <p>
+              Yes, we prioritize your privacy and use advanced security measures
+              to ensure that your data is protected.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What types of diseases can you predict?
+          </button>
+          <div class="faq-answer">
+            <p>
+              We can predict a wide range of diseases, including cardiovascular
+              diseases, diabetes, and various types of cancers.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How accurate are your predictions?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Our predictions are based on the latest medical research and
+              advanced algorithms, providing high accuracy in identifying
+              potential health risks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+        <a href="#">Contact</a>
+      </p>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const faqItem = button.parentElement;
+          faqItem.classList.toggle("open");
+        });
+      });
+    </script>
+  </body>
+</html>

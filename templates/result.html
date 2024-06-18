@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Early Disease Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #74ebd5, #9face6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+      }
+      h1 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      label {
+        display: block;
+        margin: 15px 0 5px;
+        color: #555;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #74ebd5;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #66d3c4;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        background: #f1f1f1;
+        border-radius: 5px;
+        display: none;
+      }
+      .result.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Early Disease Prediction</h1>
+      <form method="POST" action="/">
+        <label for="symptoms">Enter your symptoms:</label>
+        <input
+          type="text"
+          id="symptoms"
+          name="symptoms"
+          placeholder="e.g., fever, cough, fatigue"
+          value="{{ symptoms }}"
+          required
+        />
+        <button type="submit">Predict Disease</button>
+      </form>
+      {% if predicted_class and predicted_disease %}
+      <div class="result visible">
+        <h2>Result:</h2>
+        <p>
+          <strong>There might be something wrong with the </strong> {{
+          predicted_class }}
+        </p>
+        <p><strong>You might be having </strong> {{ predicted_disease }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

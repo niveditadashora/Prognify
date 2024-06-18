@@ -1,18 +1,10 @@
-Prognify
-Introduction
+# Disease Prediction System
+
+## Introduction
 This project is designed to predict diseases based on various inputs using machine learning models. The system leverages natural language processing (NLP) and various classification algorithms to provide predictions.
 
-Project Overview
--Objectives
---To predict disease classes and specific diseases based on symptoms.
---To provide a user-friendly web interface for inputting symptoms and viewing predictions.
-
--Key Features
---Input symptoms through a web form.
---Predict disease class and specific diseases.
---Display results on a user-friendly interface.
-
-Project Structure
+## Project Structure
+```plaintext
 disease_pred_2/
 │
 ├── app2.py
@@ -64,19 +56,3 @@ disease_pred_2/
     ├── prediction.cpython-311.pyc
     ├── read_pdf_file.cpython-311.pyc
     ├── topic_modelling.cpython-311.pyc
-
-Data
--diseases_with_description.csv: Contains disease descriptions.
--Additional data files are located in the disease_files directory.
-
-Models
-The models used in this project are pre-trained and saved in the project directory:
--final_trained_model.sav
--final_vectorizer.sav
-
-Code Explanation
--app.py: Main application script.
--classification.py: Handles disease classification.
--prediction.py: Predictive analysis.
--read_pdf_file.py: Reads and processes PDF files.
--topic_modelling.py: Topic modeling for disease data.

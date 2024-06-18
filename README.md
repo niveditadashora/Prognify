@@ -18,7 +18,7 @@ This project is designed to predict diseases based on various inputs using machi
 ```plaintext
 prognify/
 │
-├── app2.py
+├── app.py
 ├── classification.py
 ├── diseases_with_description.csv
 ├── final_trained_model.sav
@@ -56,11 +56,11 @@ prognify/
 │       └── woman.png
 │
 ├── templates/
-│   ├── about2.html
-│   ├── contact2.html
-│   ├── index2.html
+│   ├── about.html
+│   ├── contact.html
+│   ├── index.html
 │   ├── result.html
-│   └── services2.html
+│   └── services.html
 │
 └── __pycache__/
     ├── classification.cpython-311.pyc

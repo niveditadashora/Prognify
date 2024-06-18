@@ -29,19 +29,19 @@ prediction = Prediction(domain_stopwords_path, data_file_path)
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('index2.html')
+    return render_template('index.html')
 
 @app.route('/about', methods=['GET'])
 def about():
-    return render_template('about2.html')
+    return render_template('about.html')
 
 @app.route('/services', methods=['GET'])
 def services():
-    return render_template('services2.html')
+    return render_template('services.html')
 
 @app.route('/contact', methods=['GET'])
 def contact():
-    return render_template('contact2.html')
+    return render_template('contact.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():

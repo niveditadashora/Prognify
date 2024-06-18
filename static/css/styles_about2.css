@@ -1,126 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Bree Serif", serif;
-  background-color: #ede8f5;
-  color: #3d52a0;
-}
-
-header {
-  background-color: #3d52a0;
-  color: white;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.about {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.about h1 {
-  margin-bottom: 20px;
-  font-size: 2.5em;
-}
-
-.about p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-
-.faq {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
-
-.faq h2 {
-  margin-bottom: 20px;
-  font-size: 2em;
-}
-
-.faq-item {
-  margin-bottom: 15px;
-}
-
-.faq-question {
-  background-color: #3d52a0;
-  color: white;
-  padding: 15px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  font-size: 1.2em;
-  border-radius: 5px;
-}
-
-.faq-answer {
-  display: none;
-  padding: 15px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.faq-item.open .faq-answer {
-  display: block;
-}
-
-footer {
-  background-color: #3d52a0;
-  color: white;
-  text-align: center;
-  padding: 25px 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-footer ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-footer ul li a {
-  color: white;
-  text-decoration: none;
-} */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -237,6 +114,11 @@ footer ul {
 }
 
 footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a {
   color: white;
   text-decoration: none;
 }
